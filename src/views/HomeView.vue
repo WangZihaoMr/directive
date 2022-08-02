@@ -1,18 +1,24 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <p v-color="'pink'">我是王子豪，慢慢努力，慢慢接受，慢慢来是诚意</p> -->
+    <p v-permission="'user:list:delete'">
+      我是王子豪，慢慢努力，慢慢接受，慢慢来是诚意
+    </p>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+  name: "HomeView",
+  created() {
+    this.$store.commit("setList");
+  },
+};
 </script>
+
+<style scoped>
+.home {
+  width: 100%;
+  height: 100%;
+}
+</style>
